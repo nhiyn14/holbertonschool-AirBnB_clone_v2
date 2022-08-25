@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-# script that sets up your web servers for the deployment of web_static
+#script that sets up your web servers for the deployment of web_static
 
 #Install Nginx if it not already installed
 sudo apt-get -y update
 sudo apt-get -y upgrade
-command -v nginx || sudo apt-get -y install nginx
+sudo apt-get -y install nginx
 
 #Create folders if not exist
 sudo mkdir -p /data/web_static/{shared,releases}/test
 
 #Create /data/web_static/releases/test/index.html to test Nginx conf
-touch /data/web_static/releases/test/index.html
-cat > /data/web_static/releases/test/index.html << EOF
+sudo touch /data/web_static/releases/test/index.html
+sudo bash -c 'cat <<EOF > /data/web_static/releases/test/index.html
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,7 +20,7 @@ cat > /data/web_static/releases/test/index.html << EOF
     Holberton School
   </body>
 </html>
-EOF
+EOF'
 
 #Create a symbolic link /data/web_static/current
 #linked to the /data/web_static/releases/test/
@@ -28,7 +28,7 @@ EOF
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 #Recurvive ownership of /data/ to ubuntu user AND group
-sudo chown -R ubuntu:ubunty /data/
+sudo chown -R ubuntu:ubuntu /data/
 
 #Update the Nginx conf to serve /data/web_static/current/
 #to https://cienyan.tech/domain hbnb_static
