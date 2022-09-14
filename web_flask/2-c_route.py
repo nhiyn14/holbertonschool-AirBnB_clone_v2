@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-from 1-hbnb_route.py plus:
-/c/<text>: display “C ” followed by the value of text
+1-hbnb_route.py adds
+/c/<text>: display C followed by the value of text
 replace underscore (in text) with a space
 """
 from flask import Flask
