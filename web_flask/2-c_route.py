@@ -5,7 +5,6 @@
 replace underscore (in text) with a space
 """
 from flask import Flask
-from markupsafe import escape
 
 app = Flask(__name__)
 
