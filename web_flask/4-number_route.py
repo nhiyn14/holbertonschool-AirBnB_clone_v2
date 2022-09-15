@@ -23,14 +23,14 @@ def hbnb():
 @app.route("/c/<text>", strict_slashes=False)
 def c_text(text):
     """Display C + text"""
-    return f"C {text.replace('_', ' ')}"
+    return "C " + text.replace('_', ' ')
 
 
 @app.route('/python', strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def python_text(text='is_cool'):
     """Display Python + text"""
-    return f"Python {text.replace('_', ' ')}"
+    return "Python " + text.replace('_', ' ')
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
