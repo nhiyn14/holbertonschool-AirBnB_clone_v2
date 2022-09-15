@@ -24,21 +24,21 @@ def hbnb():
 @app.route("/c/<text>", strict_slashes=False)
 def c_text(text):
     """Display C + text"""
-    return f"C {text.replace('_', ' ')}"
+    return "C " + text.replace('_', ' ')
 
 
 @app.route('/python', strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def python_text(text='is_cool'):
     """Display Python + text"""
-    return f"Python {text.replace('_', ' ')}"
+    return "Python " + text.replace('_', ' ')
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def n_is_int(n):
     """Display “n is a number” only if n is int"""
     if (isinstance(n, int) is True):
-        return "n is a number"
+        return "{:d} is a number".format(n)
 
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
