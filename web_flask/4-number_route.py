@@ -37,7 +37,7 @@ def python_text(text='is_cool'):
 def n_is_int(n):
     """Display “n is a number” only if n is int"""
     if (isinstance(n, int) is True):
-        return "n is a number"
+        return "{:d} is a number".format(n)
 
 
 if __name__ == "__main__":
