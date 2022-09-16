@@ -15,6 +15,7 @@ from models import storage, State
 
 app = Flask(__name__)
 
+
 @app.teardown_appcontext
 def remove_alchemy_sess(self):
     """Remove current SQLAlchemy Session after each request"""
