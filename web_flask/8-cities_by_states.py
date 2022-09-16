@@ -15,7 +15,7 @@ remove current SQLAlchemy Session after each request
 </UL>
 """
 from flask import Flask, render_template
-from models import storage
+from models import storage, State
 
 app = Flask(__name__)
 
@@ -27,7 +27,7 @@ def remove_alchemy_sess(self):
 
 
 @app.route("/cities_by_states", strict_slashes=False)
-def state_list():
+def state_city_list():
     """Display list of States AND Cities within"""
     states = storage.all(State).values()
     return render_template('8-cities_by_states.html', states=states)
