@@ -15,7 +15,7 @@ remove current SQLAlchemy Session after each request
 </UL>
 """
 from flask import Flask, render_template
-from models import storage, State. City
+from models import storage
 
 app = Flask(__name__)
 
