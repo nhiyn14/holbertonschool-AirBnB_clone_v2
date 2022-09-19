@@ -46,7 +46,7 @@ def state_city_list(id=None):
     if id is not None:
         state_id = "State." + id
     return render_template('9-states.html',
-                               state_id=state_id, states=states)
+                           state_id=state_id, states=states)
 
 
 if __name__ == "__main__":
