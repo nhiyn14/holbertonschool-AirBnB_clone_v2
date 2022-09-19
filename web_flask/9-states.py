@@ -42,13 +42,13 @@ def state_list():
 @app.route("/states/<string:id>", strict_slashes=False)
 def state_city_list(id=None):
     """Display States AND Cities within"""
-    states = storage.all(State)
+    states = storage.all('State')
     key = "State." + id
     if key in states:
         state = states[key]
     else:
         state = None
-    return render_template('9-states.html', state=state.value())
+    return render_template('9-states.html', state=state)
 
 
 if __name__ == "__main__":
