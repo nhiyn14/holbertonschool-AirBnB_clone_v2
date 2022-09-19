@@ -45,8 +45,7 @@ def state_city_list(id=None):
     states = storage.all(State)
     if id is not None:
         state_id = "State." + id
-    if state_id in states:
-        return render_template('9-states.html',
+    return render_template('9-states.html',
                                state_id=state_id, states=states)
 
 
